@@ -304,17 +304,25 @@ Considering the differences in information availability and data size among data
 \setlength\itemsep{0em}
 \item \textbf{MEF and ESC}:
 This dataset has been used to study cell fate continuum when reprogramming MEF into iPSC.\cite{mef_ipsc_cas}
-To simulate the process of finding GF combination for reprogramming somatic cell into pluripotent stem cell, we extracted scGEPs labeled MEFs and embryonic stem cells(ESCs) from the dataset and
-Complete output GF list is included as \textbf{Supplementary Table 1}.
-\item \textbf{\emph{GSE169054}: MEF to Myoblast}:
-Data from here\cite{mef_iMPC_ETH}
-Complete output GF list is included as \textbf{Supplementary Table 2}.
-\item \textbf{\emph{GSE185275}: iPSC to Neuron}:
-Data from here\cite{ips_neuron_ascl1}
-Complete output GF list is included as \textbf{Supplementary Table 3}.
+To simulate the process of finding GF combination for reprogramming somatic cell into pluripotent stem cell, we used scGEPs labeled MEFs and embryonic stem cells(ESCs) as input of \emph{Odysseia}.
+Due to the limited amount of scGEPs, SWA with window size set to 10 and padding stride set to 1 was applied to generate 73 ESC pseudo-cGEPs and 65 MEF pseudo-cGEPs.
+Stdev threshold was set to 100, which resulted in GRN reconstruct guidance consisting 72440 GRPs, in concerning computatonal load our testing device could accept.
+All other parameters remained at default, and complete output GF list is included as \textbf{Supplementary Table 1}.
+\item \textbf{MEF and Myoblast}:
+This dataset has been used to study cell fate continuum when reprogramming MEF into iPSC.\cite{mef_iMPC_ETH}
+To simulate the process of finding GF combination for reprogramming somatic cell into pluripotent stem cell, we used scGEPs labeled MEFs and embryonic stem cells(ESCs) as input of \emph{Odysseia}.
+Due to the limited amount of scGEPs, SWA with window size set to 10 and padding stride set to 1 was applied to generate 73 ESC pseudo-cGEPs and 65 MEF pseudo-cGEPs.
+Stdev threshold was set to 100, which resulted in GRN reconstruct guidance consisting 72440 GRPs, in concerning computatonal load our testing device could accept.
+All other parameters remained at default, and complete output GF list is included as \textbf{Supplementary Table 2}.
+\item \textbf{iPSC and Neuron}:
+This dataset has been used to study cell fate continuum when reprogramming MEF into iPSC.\cite{ips_neuron_ascl1}
+To simulate the process of finding GF combination for reprogramming somatic cell into pluripotent stem cell, we used scGEPs labeled MEFs and embryonic stem cells(ESCs) as input of \emph{Odysseia}.
+Due to the limited amount of scGEPs, SWA with window size set to 10 and padding stride set to 1 was applied to generate 73 ESC pseudo-cGEPs and 65 MEF pseudo-cGEPs.
+Stdev threshold was set to 100, which resulted in GRN reconstruct guidance consisting 72440 GRPs, in concerning computatonal load our testing device could accept.
+All other parameters remained at default, and complete output GF list is included as \textbf{Supplementary Table 3}.
 \end{itemize}
 
-Even though \emph{Odysseia} is unable to directly guarantee a list of GFs to induce CS conversion, numerous previously discovered key GFs can be successfully extracted and indicate complete combination of GFs known capable to convert CSs.
+Even though \emph{Odysseia} is unable to directly guarantee a list of GFs to induce CS conversion, numerous previously discovered key GFs can be successfully extracted and indicate combination of GFs known capable to convert CSs.
 For example...\cite{ips7f}
 
 \section*{Discussion}
@@ -344,26 +352,19 @@ Result, Discussion, Conclusion are not done yet
 
 \subsection*{Key Resource Table}
 
-% \begin{tabular}{|l|l|l|}
-%   \hline
-%   \textbf{Resource}     & \textbf{Source}     & \textbf{Identifier}\\
-%   \hline
-%   \textbf{MEF and ESC scRNA-seq data}   & Gene Expression Omnibus (GEO)GSE103221 & \url{https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE103221&format=file&file=GSE103221%5Fnormalized%5Fcounts%2Ecsv%2Egz}\\
-%   \hline
-%   % $CASH$        & Combined Algorithm Selection and Hyperparameter optimization\\
-%   % $CNN$     & Convolutional Neural Network\\
-%   % $CL$        & Cell Label \\
-%   % $EM$          & Expression Matrix \\
-%   % $GRN$         & Genetic Regulatory Network \\
-%   % $ML$        & Machine Learning \\
-%   % $NN$      & Neural Network \\
-%   % $SVM$     & Support Vector Machine\\
-%   % $TF$      & Transcription Factor\\
-% \end{tabular}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Resource}     & \textbf{Source}     & \textbf{Identifier}\\
+  \hline
+  \textbf{MEF and ESC scRNA-seq data}   & Gene Expression Omnibus Accession: GSE103221 & \url{https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE103221&format=file&file=GSE103221%5Fnormalized%5Fcounts%2Ecsv%2Egz}\\
+  \hline
+  \textbf{MEF and Myoblast scRNA-seq data}   & Gene Expression Omnibus Accession: GSE169054 & \url{}\\
+  \hline
+  \textbf{iPSC and Neuron scRNA-seq data}   & Gene Expression Omnibus Accession: GSE185275 & \url{}\\
+  \hline
+\end{tabular}
 
 
 
-
-
-
+% $CASH$        & Combined Algorithm Selection and Hyperparameter optimization\\
 \end{document}
