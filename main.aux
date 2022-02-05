@@ -1,0 +1,114 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\babel@aux[2]{}
+\@nameuse{bbl@beforestart}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\bibstyle{naturemag-doi}
+\citation{yamanaka_2006}
+\citation{fibroblast_sertoli_2012,fibro_cardio_2012,mef_hept_2011}
+\citation{ASCL1_dopaminergic_neuron_2021}
+\citation{cell_repro_review}
+\citation{pancreas_subtypes_2016,lung_subtypes_2014}
+\citation{cellnet_2014}
+\citation{dalessio_2015}
+\citation{mogrify_2016}
+\citation{scn_2019}
+\babel@aux{english}{}
+\citation{cid_2019,pcc_2012}
+\newlabel{method}{{}{2}{}{Doc-Start}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The overall workflow of \emph  {Odysseia}\relax }}{2}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{odysseia}{{1}{2}{The overall workflow of \emph {Odysseia}\relax }{figure.caption.1}{}}
+\citation{2020SciPy-NMeth}
+\citation{transfac}
+\citation{gkaa1057}
+\citation{2020SciPy-NMeth}
+\citation{scikit-learn}
+\citation{scikit-learn}
+\newlabel{step1}{{}{3}{}{figure.caption.1}{}}
+\citation{chen2016xgboost}
+\citation{chen2016xgboost}
+\citation{NEURIPS2019_9015}
+\citation{mostavi_chiu_huang_chen_2020}
+\citation{NEURIPS2019_9015}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces  Workflow to create GRN reconstruction guidance from comprehensive GEPs. \textbf  {\emph  {(1)}} Each gene in scGEP set either for CS1 or CS2 need to pass stdev filter confirming its expression pattern is reacting with inconstant gene expression circumstances. \textbf  {\emph  {(2)}} GEPs of genes passed stdev filter will be input to MWU filter for confirming gene expression pattern is differentiable among binary CS categories. \textbf  {\emph  {(3)}} All TFs in genes passed MWU filter will be selected out as potential regulatory source TF utilizing given TF database. \textbf  {\emph  {(4)}} Using GF or protein-protein interaction databae, all genes passed MWU filter will be testified as target genes with potential TF found at previous step to form potential interacting gene pairs. \textbf  {\emph  {(5)}}, PCCs of potential interacting gene pairs found previously will be calculated under each CS category. A gene pair must have correspond PCC under at least one CS category greater than threshold to be considered as potential GRP. \relax }}{4}{figure.caption.2}\protected@file@percent }
+\newlabel{kirke}{{2}{4}{Workflow to create GRN reconstruction guidance from comprehensive GEPs. \textbf {\emph {(1)}} Each gene in scGEP set either for CS1 or CS2 need to pass stdev filter confirming its expression pattern is reacting with inconstant gene expression circumstances. \textbf {\emph {(2)}} GEPs of genes passed stdev filter will be input to MWU filter for confirming gene expression pattern is differentiable among binary CS categories. \textbf {\emph {(3)}} All TFs in genes passed MWU filter will be selected out as potential regulatory source TF utilizing given TF database. \textbf {\emph {(4)}} Using GF or protein-protein interaction databae, all genes passed MWU filter will be testified as target genes with potential TF found at previous step to form potential interacting gene pairs. \textbf {\emph {(5)}}, PCCs of potential interacting gene pairs found previously will be calculated under each CS category. A gene pair must have correspond PCC under at least one CS category greater than threshold to be considered as potential GRP. \relax }{figure.caption.2}{}}
+\newlabel{step2}{{}{4}{}{figure.caption.2}{}}
+\citation{chen2016xgboost}
+\citation{scikit-learn}
+\citation{NEURIPS2019_9015}
+\citation{scikit-learn}
+\citation{roth_1988}
+\citation{lundberg2017unified}
+\citation{lundberg2017unified}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces 1D-CNN with 2 convolution layer set.\relax }}{5}{figure.caption.3}\protected@file@percent }
+\newlabel{1dCNN}{{3}{5}{1D-CNN with 2 convolution layer set.\relax }{figure.caption.3}{}}
+\newlabel{step3}{{}{5}{}{figure.caption.4}{}}
+\citation{gkaa1057}
+\citation{grnboost2}
+\citation{biogrid}
+\citation{mogrify_2016}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces  Workflow to generate well-performing classifers. \textbf  {\emph  {(1)}} In each training iteration, input pseudo-cGRNs will be split into training set and testing set according to given ratio. By default, the ratio is set to 70\% for training and 30\% for testing. \textbf  {\emph  {(2)}} Accoridng to given classification model config file, vanilla classifiers will be initialized and trained with training set. The predictive accuracy of classifiers will be pre-assessed with testing data. Classifers reaching accuracy threshold, which is set to 0.9 by default, will be kept for further accuracy assessment in afterward training iterations. \textbf  {\emph  {(3)}} After all training iterations, all pseudo-cGRNs will be concated as one testing set to assess accuracies of classifers being kept. Classifers can still reach accuracy threshold, which is also set to 0.9 by default, will be passed to further analysis. \relax }}{6}{figure.caption.4}\protected@file@percent }
+\newlabel{odysseus}{{4}{6}{Workflow to generate well-performing classifers. \textbf {\emph {(1)}} In each training iteration, input pseudo-cGRNs will be split into training set and testing set according to given ratio. By default, the ratio is set to 70\% for training and 30\% for testing. \textbf {\emph {(2)}} Accoridng to given classification model config file, vanilla classifiers will be initialized and trained with training set. The predictive accuracy of classifiers will be pre-assessed with testing data. Classifers reaching accuracy threshold, which is set to 0.9 by default, will be kept for further accuracy assessment in afterward training iterations. \textbf {\emph {(3)}} After all training iterations, all pseudo-cGRNs will be concated as one testing set to assess accuracies of classifers being kept. Classifers can still reach accuracy threshold, which is also set to 0.9 by default, will be passed to further analysis. \relax }{figure.caption.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Machine learning model generas with applicable Shapley value approaching methods\relax }}{6}{table.caption.5}\protected@file@percent }
+\newlabel{shap}{{1}{6}{Machine learning model generas with applicable Shapley value approaching methods\relax }{table.caption.5}{}}
+\newlabel{step4}{{}{6}{}{table.caption.5}{}}
+\citation{mef_ipsc_cas}
+\citation{mef_iMPC_ETH}
+\citation{ips_neuron_ascl1}
+\citation{ips7f}
+\citation{gkaa1057}
+\bibdata{reference}
+\bibcite{yamanaka_2006}{1}
+\bibcite{fibroblast_sertoli_2012}{2}
+\bibcite{fibro_cardio_2012}{3}
+\bibcite{mef_hept_2011}{4}
+\bibcite{ASCL1_dopaminergic_neuron_2021}{5}
+\bibcite{cell_repro_review}{6}
+\bibcite{pancreas_subtypes_2016}{7}
+\bibcite{lung_subtypes_2014}{8}
+\bibcite{cellnet_2014}{9}
+\bibcite{dalessio_2015}{10}
+\bibcite{mogrify_2016}{11}
+\newlabel{res}{{}{7}{}{table.caption.5}{}}
+\newlabel{disc}{{}{7}{}{table.caption.5}{}}
+\newlabel{conc}{{}{7}{}{table.caption.5}{}}
+\@writefile{toc}{\contentsline {section}{\hspace  *{-\tocsep }References}{7}{table.caption.5}\protected@file@percent }
+\bibcite{scn_2019}{12}
+\bibcite{cid_2019}{13}
+\bibcite{pcc_2012}{14}
+\bibcite{2020SciPy-NMeth}{15}
+\bibcite{transfac}{16}
+\bibcite{gkaa1057}{17}
+\bibcite{scikit-learn}{18}
+\bibcite{chen2016xgboost}{19}
+\bibcite{NEURIPS2019_9015}{20}
+\bibcite{mostavi_chiu_huang_chen_2020}{21}
+\bibcite{roth_1988}{22}
+\bibcite{lundberg2017unified}{23}
+\bibcite{grnboost2}{24}
+\bibcite{biogrid}{25}
+\bibcite{mef_ipsc_cas}{26}
+\bibcite{mef_iMPC_ETH}{27}
+\bibcite{ips_neuron_ascl1}{28}
+\bibcite{ips7f}{29}
+\newlabel{LastPage}{{}{8}{}{page.8}{}}
+\xdef\lastpage@lastpage{8}
+\xdef\lastpage@lastpageHy{8}
+\ttl@finishall
+\gdef \@abspage@last{8}
