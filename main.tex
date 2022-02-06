@@ -23,7 +23,7 @@ Yet, single-cell RNA sequencing (scRNA-seq) analysis is widely accepted as main 
 As conversion of somatic cells into induced pluripotency cells already succeeded, identification key genetic factors(GFs) with scRNA-seq for cell reprogramming in biological research and regenerative medicine fields has gained great attention.
 Herein, we describe \emph{Odysseia}, an interpretable machine learning classifier based single-cell gene expression profile(scGEP) analysis system, that assesses importances of genetic regulatory features in differentiating cell state(CS).
 Furthermore, combined with regulatory network analysis, extracted factors can help to find specific key GFs in implementing CS conversions.
-Analyzing 3 published cell reprogramming related reports studying diverge cell types, \emph{Odysseia} correctly extracts GFs acclaimed being capable to induce CS conversion.
+Analyzing 3 published cell reprogramming related reports studying diverge cell types, \emph{Odysseia} correctly extracts genes acclaimed being capable to induce CS conversion.
 Overall, \emph{Odysseia} provides an option to obtain guidance information while elucidating mechanism to engineer cellular phenotypes.
 \end{abstract}
 
@@ -48,9 +48,9 @@ In 2019, \emph{SingleCellNet}\cite{scn_2019} is published as successor of \emph{
 Here we present \emph{Odysseia}, a scRNA-seq based expression profile analysis system utilizing interpretablemachine learning classifiers, for not only guiding CS conversion method design but also elucidating mechanisms behind CS conversions.
 Unlike previous described methods, \emph{Odysseia} does not require any background expression database but finding potential key GFs in conversing one CS to another with only expression profiles labeled with binary CS categories as input.
 Important genetic regulatory pathways(GRPs) being deterministic for classifying CS category will be addressed through assessing and interpreting trained classifiers.
-Then, key GFs in performing CS converion will be addressed through analyzing regulons constructed with important GRPs described previously.
-The main reason to keep this design is due to consideration on the assumption: The key GFs and GRPs may not have converged profiles in either expression or regulatory aspect.
-Thus, classification model designed to directly find CS deterministic GFs or GRPs can potentially fail to converge on a stable solution.
+Then, key genes may induce CS conversion will be addressed through analyzing regulons constructed with important GRPs described previously.
+The main reason to keep this design is due to consideration on the assumption: The key genes and GRPs may not have converged profiles in either expression or regulatory aspects.
+Thus, classification model designed to directly find CS deterministic genes or GRPs can potentially fail to converge on a stable solution.
 One of the intuitive approach to solve the non-convergence issue is transforming classification question into higher dimension.
 In our case, instead of asking which factors are CS deterministic, we can transform the question into determining CS category, which is supposed to be a converged and labeled profile among input data, with given GEP.
 Then, we can analysis the well-performing classifiers and determine which features, equivalent to GRPs, are essential for the classifiers to make correct decisions.
@@ -86,7 +86,7 @@ Briefly, \emph{Odysseia} consists of 4 main steps which can be summarized below 
   \item \hyperref[step1]{\textbf{\emph{Step 1}}}: Generate pseudo-celluar gene expression profiles(pseudo-cGEPs) and corresponding pseudo-cellular genetic regulatory network(pseudo-cGRN) with genetic regulatory network(GRN) reconstruction guidance.
   \item \hyperref[step2]{\textbf{\emph{Step 2}}}: Train classification models with GRNs reconstructed with pseudo-cGEPs then select out well-performing models via accuracy evaluation.
   \item \hyperref[step3]{\textbf{\emph{Step 3}}}: Interpret selected classifiers' correct predictions on all generated GRNs.
-  \item \hyperref[step4]{\textbf{\emph{Step 4}}}: Perform regulon based analysis on important GRPs found from classifer interpretation in step 3 and extract important GFs indicated by the GRPs.
+  \item \hyperref[step4]{\textbf{\emph{Step 4}}}: Perform regulon based analysis on important GRPs found from classifer interpretation in step 3 and extract key genes indicated by the GRPs.
 \end{itemize}
 
 
@@ -268,18 +268,18 @@ Following analysis all classifers, each feature's general importance value can b
 
 Here $i$ denoting \emph{i th} feature or GRP, $C$ denoting total number of classifers being analyzed, $T_{j}(Z)[i]$ denoting \emph{i th} feature's importance value calculated through analyzing \emph{j th} classifier.
 
-\subsection*{Step 4: important GF extraction}
+\subsection*{Step 4: Key genes extraction}
 \label{step4}
-With feature list ranked according to importance values, \emph{Odysseia} reconstructs a regulon for top ranked GRPs and extracts influential GFs among the regulon.
-If analoging regulon or GRN with the graph concept in discrete mathematics, one of the most common methods to analysis influence of a vertex, which is equivalent with GF, is assessing correspond degree of the vertex.
+With feature list ranked according to importance values, \emph{Odysseia} reconstructs a regulon for top ranked GRPs and extracts influential genes among the regulon.
+If analoging regulon or GRN with the graph concept in discrete mathematics, one of the most common methods to analysis influence of a vertex, which is equivalent with a gene, is assessing correspond degree of the vertex.
 Although the regulatory source and target within a GRP can be determined if utilizing interaction database, such as \emph{GTRD}\cite{gkaa1057}, showing regulatory relationship of interactors, numerous computational prediction method, \emph{GRNBoost2}\cite{grnboost2} for example, and comprehensive interaction database, \emph{BioGRID}\cite{biogrid} for example, could not provide faithful indication on regulatory directions.
 Consequently, based on choice of interaction database for \emph{Odysseia}, the regulon reconstructed cannot be guaranteed to be a directed graph but can surely be analyzed as undirected graph.
-Therefore, in this step, \emph{odysseia} primarily extracts GFs with high degrees in the regulon regardless in-degree or out-degree.
-To limit total amount of output important GFs, the default setting of \emph{Odysseia} is reconstructing regulon for top 100 GRPs, and GFs with degree higher than 2 in the regulon will be considered as influential.
-If regulatory relationships can be clarifed, the regulatory sources being capable to regulate multiple important GFs and the regulatory targets being influenced by mulitple important GFs can also be extracted according to GRN reconstruction guidance.
+Therefore, in this step, \emph{odysseia} primarily extracts genes with high degrees in the regulon regardless in-degree or out-degree.
+To limit total amount of output key genes, the default setting of \emph{Odysseia} is reconstructing regulon for top 100 GRPs, and genes with degree higher than 2 in the regulon will be considered as influential.
+If regulatory relationships can be clarifed, the regulatory sources being capable to regulate multiple key genes and the regulatory targets being influenced by mulitple key genes can also be extracted according to GRN reconstruction guidance.
 
-In the circumstance of finding GFs can potentially induce CS conversion, referring \emph{Mogrify}\cite{mogrify_2016}, GFs being either CS deterministic or capable of regulating important GFs shall gain attention.
-By default setting, if a GF is not listed as important GF, it must be capable to regulate more than 2 listed GFs to be considered as an important regulatory interactor.
+In the circumstance of finding genes can potentially induce CS conversion, referring \emph{Mogrify}\cite{mogrify_2016}, genes being either CS deterministic or capable of regulating key genes shall gain attention.
+By default setting, if a gene is not marked important, it must be capable to regulate more than 2 listed key genes to be considered as an important regulatory interactor.
 
 % Both non-convergence issue and feature lost issue reflect on one of the key problems for $AutoML$: "No single machine learning method performs best on all datasets".\cite{NIPS2015_11d0e628}
 % Even though this problem can be solved while viewing $AutoML$ as a $CASH$ problem \cite{thornton2013auto}, such approach may not be directly deployable in our scenario considering comprehensive CS deterministic GFs or GRPs could be hardly labeled out.
@@ -304,25 +304,49 @@ Considering the differences in information availability and data size among data
 \setlength\itemsep{0em}
 \item \textbf{MEF and ESC}:
 This dataset has been used to study cell fate continuum when reprogramming MEF into iPSC.\cite{mef_ipsc_cas}
-To simulate the process of finding GF combination for reprogramming somatic cell into pluripotent stem cell, we used scGEPs labeled MEFs and embryonic stem cells(ESCs) as input of \emph{Odysseia}.
+To simulate the process of finding gene combination for reprogramming somatic cell into pluripotent stem cell, we used scGEPs labeled MEFs and embryonic stem cells(ESCs) as input of \emph{Odysseia}.
 Due to the limited amount of scGEPs, SWA with window size set to 10 and padding stride set to 1 was applied to generate 73 ESC pseudo-cGEPs and 65 MEF pseudo-cGEPs.
 Stdev threshold was set to 100, which resulted in GRN reconstruct guidance consisting 72440 GRPs, in concerning computatonal load our testing device could accept.
-All other parameters remained at default, and complete output GF list is included as \textbf{Supplementary Table 1}.
+While all other parameters remained at default, \emph{Odysseia} extracted 16 key genes and 9 common regulatory sources of key genes.
+Partial key genes which have already been reported in other studies are listed in Table\ref{mef_ips_table}, and complete output gene list is included as \textbf{Supplementary Table 1}.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Gene} & \textbf{Occurrences in top GRPs} & \textbf{Regulatory target as key genes} & \textbf{Previous knwoledge}  \\
+\hline
+Nanog & 16 & 0 & ummmm \\
+\hline
+Esrrb & 10 & 0 & ummmm \\
+\hline
+Sall4 & 10 & 0 & ummmm \\
+\hline
+Pou5f1(Oct4) & 7 & 0 & ummmm \\
+\hline
+Fos & 3 & 2 & ummmm \\
+\hline
+Klf4 & 2 & 0 & ummmm \\
+\hline
+\end{tabular}
+\caption{\label{mef_ips_table}Machine learning model generas with applicable Shapley value approaching methods}
+\end{table}
+
 \item \textbf{MEF and Myoblast}:
 This dataset has been used to study cell fate continuum when reprogramming MEF into iPSC.\cite{mef_iMPC_ETH}
-To simulate the process of finding GF combination for reprogramming somatic cell into pluripotent stem cell, we used scGEPs labeled MEFs and embryonic stem cells(ESCs) as input of \emph{Odysseia}.
+To simulate the process of finding gene combination for reprogramming somatic cell into pluripotent stem cell, we used scGEPs labeled MEFs and embryonic stem cells(ESCs) as input of \emph{Odysseia}.
 Due to the limited amount of scGEPs, SWA with window size set to 10 and padding stride set to 1 was applied to generate 73 ESC pseudo-cGEPs and 65 MEF pseudo-cGEPs.
 Stdev threshold was set to 100, which resulted in GRN reconstruct guidance consisting 72440 GRPs, in concerning computatonal load our testing device could accept.
-All other parameters remained at default, and complete output GF list is included as \textbf{Supplementary Table 2}.
+All other parameters remained at default, and complete output gene list is included as \textbf{Supplementary Table 2}.
 \item \textbf{iPSC and Neuron}:
 This dataset has been used to study cell fate continuum when reprogramming MEF into iPSC.\cite{ips_neuron_ascl1}
-To simulate the process of finding GF combination for reprogramming somatic cell into pluripotent stem cell, we used scGEPs labeled MEFs and embryonic stem cells(ESCs) as input of \emph{Odysseia}.
+To simulate the process of finding gene combination for reprogramming somatic cell into pluripotent stem cell, we used scGEPs labeled MEFs and embryonic stem cells(ESCs) as input of \emph{Odysseia}.
 Due to the limited amount of scGEPs, SWA with window size set to 10 and padding stride set to 1 was applied to generate 73 ESC pseudo-cGEPs and 65 MEF pseudo-cGEPs.
 Stdev threshold was set to 100, which resulted in GRN reconstruct guidance consisting 72440 GRPs, in concerning computatonal load our testing device could accept.
-All other parameters remained at default, and complete output GF list is included as \textbf{Supplementary Table 3}.
+All other parameters remained at default, and complete output gene list is included as \textbf{Supplementary Table 3}.
 \end{itemize}
 
-Even though \emph{Odysseia} is unable to directly guarantee a list of GFs to induce CS conversion, numerous previously discovered key GFs can be successfully extracted and indicate combination of GFs known capable to convert CSs.
+Even though \emph{Odysseia} is unable to directly guarantee a gene combination to induce CS conversion, numerous previously discovered key genes can be successfully extracted and indicate gene combination known capable to convert CSs.
 For example...\cite{ips7f}
 
 \section*{Discussion}
