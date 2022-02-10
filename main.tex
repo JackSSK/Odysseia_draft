@@ -303,51 +303,109 @@ Considering the differences in information availability and data size among data
 \begin{itemize}
 \setlength\itemsep{0em}
 \item \textbf{MEF and ESC}:
-This dataset has been used to study cell fate continuum when reprogramming MEF into iPSC.\cite{mef_ipsc_cas}
+This dataset has been used to study cell fate continuum when reprogramming MEF into iPSC, one of the most well-studied CS conversions.\cite{mef_ipsc_cas}
 To simulate the process of finding gene combination for reprogramming somatic cell into pluripotent stem cell, we used scGEPs labeled MEFs and embryonic stem cells(ESCs) as input of \emph{Odysseia}.
 Due to the limited amount of scGEPs, SWA with window size set to 10 and padding stride set to 1 was applied to generate 73 ESC pseudo-cGEPs and 65 MEF pseudo-cGEPs.
-Stdev threshold was set to 100, which resulted in GRN reconstruct guidance consisting 72440 GRPs, in concerning computatonal load our testing device could accept.
+Stdev threshold was set to 100, which resulted in GRN reconstruct guidance consisting 72440 GRPs, in concerning computational load our testing device could accept.
 While all other parameters remained at default, \emph{Odysseia} extracted 16 key genes and 9 common regulatory sources of key genes.
-Partial key genes which have already been reported in other studies are listed in Table\ref{mef_ips_table}, and complete output gene list is included as \textbf{Supplementary Table 1}.
+Partial key genes which have already been reported in other studies are listed in below, and complete output gene list is included as \textbf{Supplementary Table 1}.
 
 \begin{table}[ht]
 \centering
 \begin{tabular}{|l|l|l|l|}
 \hline
-\textbf{Gene} & \textbf{Occurrences in top GRPs} & \textbf{Regulatory target as key genes} & \textbf{Previous knwoledge}  \\
+\textbf{Gene} & \textbf{Occurrence} & \textbf{Degree} & \textbf{Previous report}  \\
 \hline
-Nanog & 16 & 0 & ummmm \\
+Nanog & 16 & 0 & Can reprogram MEF into iPSC with other GFs\cite{ips7f, oct4_nanog_sox2_lin28, oct4_nanog_sox2} \\
 \hline
-Esrrb & 10 & 0 & ummmm \\
+Esrrb & 10 & 0 & Can reprogram MEF into iPSC with other GFs\cite{ips7f, LIF_esrrb, gtmEsrrb_iPSC, JARID2_PRDM14_ESRRB_SALL4A} \\
 \hline
-Sall4 & 10 & 0 & ummmm \\
+Sall4 & 10 & 0 & Can reprogram MEF into iPSC with other GFs\cite{ips7f, JARID2_PRDM14_ESRRB_SALL4A} \\
 \hline
-Pou5f1(Oct4) & 7 & 0 & ummmm \\
+Tfcp2l1 & 8 & 0 & Key regulatory mediator supporting ESC identity\cite{tfcp2l1_1, tfcp2l1_2} \\
 \hline
-Fos & 3 & 2 & ummmm \\
+Pou5f1 (Oct4) & 7 & 0 & Can reprogram MEF into iPSC with other GFs\cite{yamanaka_2006, oct4_nanog_sox2_lin28, oct4_nanog_sox2, ips2f, ipsOK, osk} \\
 \hline
-Klf4 & 2 & 0 & ummmm \\
+Fos & 3 & 2 & Subunit of AP-1 which can prohibit iPSC reprogramming\cite{ips7f, ipsAP1} \\
+\hline
+Klf4 & 2 & 0 & Can reprogram MEF into iPSC with other GFs\cite{yamanaka_2006, ips2f, ipsOK, osk} \\
 \hline
 \end{tabular}
-\caption{\label{mef_ips_table}Machine learning model generas with applicable Shapley value approaching methods}
 \end{table}
 
-\item \textbf{MEF and Myoblast}:
-This dataset has been used to study cell fate continuum when reprogramming MEF into iPSC.\cite{mef_iMPC_ETH}
-To simulate the process of finding gene combination for reprogramming somatic cell into pluripotent stem cell, we used scGEPs labeled MEFs and embryonic stem cells(ESCs) as input of \emph{Odysseia}.
-Due to the limited amount of scGEPs, SWA with window size set to 10 and padding stride set to 1 was applied to generate 73 ESC pseudo-cGEPs and 65 MEF pseudo-cGEPs.
-Stdev threshold was set to 100, which resulted in GRN reconstruct guidance consisting 72440 GRPs, in concerning computatonal load our testing device could accept.
-All other parameters remained at default, and complete output gene list is included as \textbf{Supplementary Table 2}.
-\item \textbf{iPSC and Neuron}:
-This dataset has been used to study cell fate continuum when reprogramming MEF into iPSC.\cite{ips_neuron_ascl1}
-To simulate the process of finding gene combination for reprogramming somatic cell into pluripotent stem cell, we used scGEPs labeled MEFs and embryonic stem cells(ESCs) as input of \emph{Odysseia}.
-Due to the limited amount of scGEPs, SWA with window size set to 10 and padding stride set to 1 was applied to generate 73 ESC pseudo-cGEPs and 65 MEF pseudo-cGEPs.
-Stdev threshold was set to 100, which resulted in GRN reconstruct guidance consisting 72440 GRPs, in concerning computatonal load our testing device could accept.
-All other parameters remained at default, and complete output gene list is included as \textbf{Supplementary Table 3}.
+Here, \textbf{Occurrence} refers to occurrences in top ranked GRPs; \textbf{Degree} refers to amount of regulating key genes; \textbf{Previous report} summarizes key findings from previous reports.
+
+\item \textbf{MEF and iMPC}:
+The main purpose of analyzing this dataset is to assess \emph{Odysseia}'s peformance while stimulating natural cells with artificially induced cells.
+This dataset is retrieved from research project studying detailed processes of fibroblast to myocyte and myogenic progenitor cell(MPC) conversion.\cite{mef_iMPC_ETH}
+For approaching muscle cell reprogramming, the output goal of this analysis is designed to find key genes for converting MEF into myoblast and further derived myotube both can be stimulated with MyoD+ induced MPCs(iMPCs)\cite{mpc_as_myoblast}.
+Practically, only iMPC scGEPs having EL of Myod1 greater than 1, the lowest positive EL in dataset, were extracted as myoblasts and myotubes co-culture and analyzed with MEF scGEPs.
+Due to the computational limitation on our device, pseudo-cGEPs were generated with every 100 scGEPs.
+As a result, in total of 99 MyoD+ iMPC and 62 MEFs pseudo-cGEPs were generated.
+Stdev threshold was also set to 5 to limit the size of GRN reconstruct guidance being 3756 GRPs.
+Without any change on other default parameters, \emph{Odysseia} extracted 6 key genes and 3 common regulatory sources of key genes.
+Partial analysis result is listed below under same format as mentioned in section above, and complete output gene list is included as \textbf{Supplementary Table 2}.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Gene} & \textbf{Occurrence} & \textbf{Degree} & \textbf{Previous report}  \\
+\hline
+Sox4 & 73 & 2 & Myogenesis mediator\cite{sox4_2013, myogenic_repro_2018} \\
+\hline
+Mef2c & 23 & 3 & Synergy factor of MyoD in the conversion of MEF into myoblast\cite{mef2_2017, mef2_skeletal}\\
+\hline
+Myog & 2 & 4 & Marker of differentiating myoblast\cite{myog_1996, myog_2017} \\
+\hline
+Tcf4 & 2 & 2 & Marker of MEF in muscle connective tissue; Myogenesis mediator\cite{tcf4_2011, tcf4_2016, tcf4_2017}\\
+\hline
+Mef2a & 0 & 3 & Synergy factor of MyoD in the conversion of MEF into myoblast\cite{mef2_2017, mef2_skeletal}\\
+\hline
+Myod1 & 0 & 3 & Can reprogram MEF into myoblast and myotube solely\cite{mef_iMPC_ETH, myod_1990} \\
+\hline
+\end{tabular}
+\end{table}
+
+\item \textbf{iPSC and Dopaminergic Neuron}:
+The main purpose of analyzing this dataset is to assess \emph{Odysseia}'s peformance while stimulating natural cells with artificially induced cells.
+This dataset is retrieved from research project studying detailed processes of fibroblast to myocyte and myogenic progenitor cell(MPC) conversion.\cite{ips_neuron_ascl1}
+Since authors did not provide scRNA-seq data for natural MPCs but only induced MPCs(iMPCs) generated with MyoD dependent treatments, we stimulate natrual MPCs with iMPCs expressing Myod1.
+Specifically, only iMPC scGEPs having EL of Myod1 greater than 1, the lowest EL in dataset, were analyzed with MEF scGEPs.
+Due to the limitation on our device, pseudo-cGEPs were generated with every 100 scGEPs.
+As a result, in total of 99 MyoD+ iMPC and 62 MEFs pseudo-cGEPs were generated.
+Stdev threshold was also set to 5 to limit the size of GRN reconstruct guidance being 3756 GRPs.
+While all other parameters remained at default, \emph{Odysseia} extracted 6 key genes and 3 common regulatory sources of key genes.
+Partial analysis result is listed below under same format as mentioned in section above, and complete output gene list is included as \textbf{Supplementary Table 3}.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Gene} & \textbf{Occurrence} & \textbf{Degree} & \textbf{Previous report}  \\
+\hline
+Ets2 & 48 & 12 & ummm\cite{} \\
+\hline
+Isl1 & 23 & 4 & ummm\cite{}\\
+\hline
+Ascl1 & 16 & 13 & umm\cite{ips_neuron_ascl1} \\
+\hline
+Nr3c1 & 0 & 9 & ummm\cite{}\\
+\hline
+Rbpj & 0 & 8 & ummm\cite{}\\
+\hline
+Neurod1 & 0 & 7 & ummm\cite{ips_neuron_ascl1} \\
+\hline
+\end{tabular}
+\end{table}
+
 \end{itemize}
 
-Even though \emph{Odysseia} is unable to directly guarantee a gene combination to induce CS conversion, numerous previously discovered key genes can be successfully extracted and indicate gene combination known capable to convert CSs.
-For example...\cite{ips7f}
+Even though \emph{Odysseia} is unable to guarantee a gene combination inducing CS conversion, numerous previously discovered key genes can be successfully extracted and indicate gene combination known capable to convert CSs.
+For example, when analyzing MEF with iPSC, the top 3 genes having most occurrences among important GRPs are determined as key factors to reprogram MEF into iPSC with 7F combination\cite{ips7f}.
+With Jdp2 which is selected to block AP-1 activity also as Fos indicating, the combination of Jdp2, Nanog, Esrrb, and Sall4 is demonstrated as a minimum 4F functional set to perform cell reprogramming\cite{ips7f}.
+While Sall4 indicating interaction between Sox2 and Oct4\cite{sall4_oct4_sox2}, main components among Yamanaka factors\cite{yamanaka_2006, osk} can also be extracted with \emph{Odysseia}'s analysis result.
+
 
 \section*{Discussion}
 \label{disc}
@@ -376,17 +434,17 @@ Result, Discussion, Conclusion are not done yet
 
 \subsection*{Key Resource Table}
 
-\begin{tabular}{|l|l|l|}
-  \hline
-  \textbf{Resource}     & \textbf{Source}     & \textbf{Identifier}\\
-  \hline
-  \textbf{MEF and ESC scRNA-seq data}   & Gene Expression Omnibus Accession: GSE103221 & \url{https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE103221&format=file&file=GSE103221%5Fnormalized%5Fcounts%2Ecsv%2Egz}\\
-  \hline
-  \textbf{MEF and Myoblast scRNA-seq data}   & Gene Expression Omnibus Accession: GSE169054 & \url{}\\
-  \hline
-  \textbf{iPSC and Neuron scRNA-seq data}   & Gene Expression Omnibus Accession: GSE185275 & \url{}\\
-  \hline
-\end{tabular}
+% \begin{tabular}{|l|l|l|}
+%   \hline
+%   \textbf{Resource}     & \textbf{Source}     & \textbf{Identifier}\\
+%   \hline
+%   \textbf{MEF and ESC scRNA-seq data}   & Gene Expression Omnibus Accession: GSE103221 & \url{https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE103221&format=file&file=GSE103221%5Fnormalized%5Fcounts%2Ecsv%2Egz}\\
+%   \hline
+%   \textbf{MEF and Myoblast scRNA-seq data}   & Gene Expression Omnibus Accession: GSE169054 & \url{}\\
+%   \hline
+%   \textbf{iPSC and Neuron scRNA-seq data}   & Gene Expression Omnibus Accession: GSE185275 & \url{}\\
+%   \hline
+% \end{tabular}
 
 
 

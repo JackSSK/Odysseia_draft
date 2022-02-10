@@ -218,6 +218,107 @@
 \newblock {\emph{\JournalTitle{Molecular Cell}}} \textbf{\bibinfo{volume}{73}},
   \doiprefix\url{10.1016/j.molcel.2019.01.042} (\bibinfo{year}{2019}).
 
+\bibitem{ips7f}
+\bibinfo{author}{Wang, B.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Induction of pluripotent stem cells
+  from mouse embryonic fibroblasts by
+  jdp2-jhdm1b-mkk6-glis1-nanog-essrb-sall4}}.
+\newblock {\emph{\JournalTitle{Cell Reports}}} \textbf{\bibinfo{volume}{27}},
+  \doiprefix\url{10.1016/j.celrep.2019.05.068} (\bibinfo{year}{2019}).
+
+\bibitem{oct4_nanog_sox2_lin28}
+\bibinfo{author}{Yu, J.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Induced pluripotent stem cell lines
+  derived from human somatic cells}}.
+\newblock {\emph{\JournalTitle{Science}}} \textbf{\bibinfo{volume}{318}},
+  \bibinfo{pages}{1917–1920}, \doiprefix\url{10.1126/science.1151526}
+  (\bibinfo{year}{2007}).
+
+\bibitem{oct4_nanog_sox2}
+\bibinfo{author}{Wang, Y.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Reprogramming of mouse and human
+  somatic cells by high‐performance engineered factors}}.
+\newblock {\emph{\JournalTitle{EMBO reports}}} \textbf{\bibinfo{volume}{12}},
+  \bibinfo{pages}{373–378}, \doiprefix\url{10.1038/embor.2011.11}
+  (\bibinfo{year}{2011}).
+
+\bibitem{LIF_esrrb}
+\bibinfo{author}{Huang, D.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Lif activated jak signaling
+  determines esrrb expression during late-stage reprogramming}}.
+\newblock {\emph{\JournalTitle{Biology Open}}}
+  \doiprefix\url{10.1242/bio.029264} (\bibinfo{year}{2017}).
+
+\bibitem{gtmEsrrb_iPSC}
+\bibinfo{author}{Benchetrit, H.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Direct induction of the three
+  pre-implantation blastocyst cell types from fibroblasts}}.
+\newblock {\emph{\JournalTitle{Cell Stem Cell}}} \textbf{\bibinfo{volume}{24}},
+  \doiprefix\url{10.1016/j.stem.2019.03.018} (\bibinfo{year}{2019}).
+
+\bibitem{JARID2_PRDM14_ESRRB_SALL4A}
+\bibinfo{author}{Iseki, H.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Combined overexpression of jarid2,
+  prdm14, esrrb, and sall4a dramatically improves efficiency and kinetics of
+  reprogramming to induced pluripotent stem cells}}.
+\newblock {\emph{\JournalTitle{Stem Cells}}} \textbf{\bibinfo{volume}{34}},
+  \bibinfo{pages}{322–333}, \doiprefix\url{10.1002/stem.2243}
+  (\bibinfo{year}{2015}).
+
+\bibitem{tfcp2l1_1}
+\bibinfo{author}{Wang, X.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{The transcription factor tfcp2l1
+  induces expression of distinct target genes and promotes self-renewal of
+  mouse and human embryonic stem cells}}.
+\newblock {\emph{\JournalTitle{Journal of Biological Chemistry}}}
+  \textbf{\bibinfo{volume}{294}}, \bibinfo{pages}{6007–6016},
+  \doiprefix\url{10.1074/jbc.ra118.006341} (\bibinfo{year}{2019}).
+
+\bibitem{tfcp2l1_2}
+\bibinfo{author}{Ye, S.}, \bibinfo{author}{Li, P.}, \bibinfo{author}{Tong, C.}
+  \& \bibinfo{author}{Ying, Q.-L.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Embryonic stem cell self-renewal
+  pathways converge on the transcription factor tfcp2l1}}.
+\newblock {\emph{\JournalTitle{The EMBO Journal}}}
+  \textbf{\bibinfo{volume}{32}}, \bibinfo{pages}{2548–2560},
+  \doiprefix\url{10.1038/emboj.2013.175} (\bibinfo{year}{2013}).
+
+\bibitem{ips2f}
+\bibinfo{author}{Nemajerova, A.}, \bibinfo{author}{Kim, S.~Y.},
+  \bibinfo{author}{Petrenko, O.} \& \bibinfo{author}{Moll, U.~M.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Two-factor reprogramming of somatic
+  cells to pluripotent stem cells reveals partial functional redundancy of sox2
+  and klf4}}.
+\newblock {\emph{\JournalTitle{Cell Death and Differentiation}}}
+  \textbf{\bibinfo{volume}{19}}, \bibinfo{pages}{1268–1276},
+  \doiprefix\url{10.1038/cdd.2012.45} (\bibinfo{year}{2012}).
+
+\bibitem{ipsOK}
+\bibinfo{author}{Shi, Y.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Induction of pluripotent stem cells
+  from mouse embryonic fibroblasts by oct4 and klf4 with small-molecule
+  compounds}}.
+\newblock {\emph{\JournalTitle{Cell Stem Cell}}} \textbf{\bibinfo{volume}{3}},
+  \bibinfo{pages}{568–574}, \doiprefix\url{10.1016/j.stem.2008.10.004}
+  (\bibinfo{year}{2008}).
+
+\bibitem{osk}
+\bibinfo{author}{Maekawa, M.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Direct reprogramming of somatic
+  cells is promoted by maternal transcription factor glis1}}.
+\newblock {\emph{\JournalTitle{Nature}}} \textbf{\bibinfo{volume}{474}},
+  \bibinfo{pages}{225–229}, \doiprefix\url{10.1038/nature10106}
+  (\bibinfo{year}{2011}).
+
+\bibitem{ipsAP1}
+\bibinfo{author}{Li, D.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Chromatin accessibility dynamics
+  during ipsc reprogramming}}.
+\newblock {\emph{\JournalTitle{Cell Stem Cell}}} \textbf{\bibinfo{volume}{21}},
+  \bibinfo{pages}{819--833.e6},
+  \doiprefix\url{https://doi.org/10.1016/j.stem.2017.10.012}
+  (\bibinfo{year}{2017}).
+
 \bibitem{mef_iMPC_ETH}
 \bibinfo{author}{Kim, I.} \emph{et~al.}
 \newblock \bibinfo{journal}{\bibinfo{title}{Integrative molecular roadmap for
@@ -225,6 +326,104 @@
   cells}}.
 \newblock {\emph{\JournalTitle{bioRxiv}}}
   \doiprefix\url{10.1101/2021.08.20.457151} (\bibinfo{year}{2021}).
+
+\bibitem{mpc_as_myoblast}
+\bibinfo{author}{Bar-Nur, O.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Direct reprogramming of mouse
+  fibroblasts into functional skeletal muscle progenitors}}.
+\newblock {\emph{\JournalTitle{Stem Cell Reports}}}
+  \textbf{\bibinfo{volume}{10}}, \bibinfo{pages}{1505--1521},
+  \doiprefix\url{https://doi.org/10.1016/j.stemcr.2018.04.009}
+  (\bibinfo{year}{2018}).
+
+\bibitem{sox4_2013}
+\bibinfo{author}{Jang, S.-M.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Sox4-mediated caldesmon expression
+  facilitates skeletal myoblast differentiation}}.
+\newblock {\emph{\JournalTitle{Journal of cell science}}}
+  \textbf{\bibinfo{volume}{126}}, \doiprefix\url{10.1242/jcs.131581}
+  (\bibinfo{year}{2013}).
+
+\bibitem{myogenic_repro_2018}
+\bibinfo{author}{Liu, S.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Genome architecture mediates
+  transcriptional control of human myogenic reprogramming}}.
+\newblock {\emph{\JournalTitle{iScience}}} \textbf{\bibinfo{volume}{6}},
+  \bibinfo{pages}{232–246}, \doiprefix\url{10.1016/j.isci.2018.08.002}
+  (\bibinfo{year}{2018}).
+
+\bibitem{mef2_2017}
+\bibinfo{author}{Taylor, M.~V.} \& \bibinfo{author}{Hughes, S.~M.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Mef2 and the skeletal muscle
+  differentiation program}}.
+\newblock {\emph{\JournalTitle{Seminars in Cell and Developmental Biology}}}
+  \textbf{\bibinfo{volume}{72}}, \bibinfo{pages}{33–44},
+  \doiprefix\url{10.1016/j.semcdb.2017.11.020} (\bibinfo{year}{2017}).
+
+\bibitem{mef2_skeletal}
+\bibinfo{author}{Liu, N.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Requirement of mef2a, c, and d for
+  skeletal muscle regeneration}}.
+\newblock {\emph{\JournalTitle{Proceedings of the National Academy of
+  Sciences}}} \textbf{\bibinfo{volume}{111}}, \bibinfo{pages}{4109--4114},
+  \doiprefix\url{10.1073/pnas.1401732111} (\bibinfo{year}{2014}).
+\newblock \eprint{https://www.pnas.org/content/111/11/4109.full.pdf}.
+
+\bibitem{myog_1996}
+\bibinfo{author}{Andrés, V.} \& \bibinfo{author}{Walsh, K.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Myogenin expression, cell cycle
+  withdrawal, and phenotypic differentiation are temporally separable events
+  that precede cell fusion upon myogenesis.}}
+\newblock {\emph{\JournalTitle{Journal of Cell Biology}}}
+  \textbf{\bibinfo{volume}{132}}, \bibinfo{pages}{657–666},
+  \doiprefix\url{10.1083/jcb.132.4.657} (\bibinfo{year}{1996}).
+
+\bibitem{myog_2017}
+\bibinfo{author}{Dumont, N.~A.} \& \bibinfo{author}{Rudnicki, M.~A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Characterizing satellite cells and
+  myogenic progenitors during skeletal muscle regeneration}}.
+\newblock {\emph{\JournalTitle{Methods in Molecular Biology}}}
+  \bibinfo{pages}{179–188}, \doiprefix\url{10.1007/978-1-4939-6788-9_12}
+  (\bibinfo{year}{2017}).
+
+\bibitem{tcf4_2011}
+\bibinfo{author}{Mathew, S.~J.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Connective tissue fibroblasts and
+  tcf4 regulate myogenesis}}.
+\newblock {\emph{\JournalTitle{Development}}} \textbf{\bibinfo{volume}{138}},
+  \bibinfo{pages}{371–384}, \doiprefix\url{10.1242/dev.057463}
+  (\bibinfo{year}{2011}).
+
+\bibitem{tcf4_2016}
+\bibinfo{author}{Contreras, O.}, \bibinfo{author}{Rebolledo, D.~L.},
+  \bibinfo{author}{Oyarzún, J.~E.}, \bibinfo{author}{Olguín, H.~C.} \&
+  \bibinfo{author}{Brandan, E.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Connective tissue cells expressing
+  fibro/adipogenic progenitor markers increase under chronic damage: Relevance
+  in fibroblast-myofibroblast differentiation and skeletal muscle fibrosis}}.
+\newblock {\emph{\JournalTitle{Cell and Tissue Research}}}
+  \textbf{\bibinfo{volume}{364}}, \bibinfo{pages}{647–660},
+  \doiprefix\url{10.1007/s00441-015-2343-0} (\bibinfo{year}{2016}).
+
+\bibitem{tcf4_2017}
+\bibinfo{author}{Fry, C.~S.}, \bibinfo{author}{Kirby, T.~J.},
+  \bibinfo{author}{Kosmac, K.}, \bibinfo{author}{McCarthy, J.~J.} \&
+  \bibinfo{author}{Peterson, C.~A.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Myogenic progenitor cells control
+  extracellular matrix production by fibroblasts during skeletal muscle
+  hypertrophy}}.
+\newblock {\emph{\JournalTitle{Cell Stem Cell}}} \textbf{\bibinfo{volume}{20}},
+  \bibinfo{pages}{56–69}, \doiprefix\url{10.1016/j.stem.2016.09.010}
+  (\bibinfo{year}{2017}).
+
+\bibitem{myod_1990}
+\bibinfo{author}{Choi, J.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Myod converts primary dermal
+  fibroblasts, chondroblasts, smooth muscle, and retinal pigmented epithelial
+  cells into striated mononucleated myoblasts and multinucleated myotubes.}}
+\newblock {\emph{\JournalTitle{Proceedings of the National Academy of
+  Sciences}}} \textbf{\bibinfo{volume}{87}}, \bibinfo{pages}{7988–7992},
+  \doiprefix\url{10.1073/pnas.87.20.7988} (\bibinfo{year}{1990}).
 
 \bibitem{ips_neuron_ascl1}
 \bibinfo{author}{Earley, A.~M.}, \bibinfo{author}{Burbulla, L.~F.},
@@ -235,12 +434,15 @@
   \textbf{\bibinfo{volume}{11}}, \doiprefix\url{10.1038/s41598-021-01366-4}
   (\bibinfo{year}{2021}).
 
-\bibitem{ips7f}
-\bibinfo{author}{Wang, B.} \emph{et~al.}
-\newblock \bibinfo{journal}{\bibinfo{title}{Induction of pluripotent stem cells
-  from mouse embryonic fibroblasts by
-  jdp2-jhdm1b-mkk6-glis1-nanog-essrb-sall4}}.
-\newblock {\emph{\JournalTitle{Cell Reports}}} \textbf{\bibinfo{volume}{27}},
-  \doiprefix\url{10.1016/j.celrep.2019.05.068} (\bibinfo{year}{2019}).
+\bibitem{sall4_oct4_sox2}
+\bibinfo{author}{Tanimura, N.}, \bibinfo{author}{Saito, M.},
+  \bibinfo{author}{Ebisuya, M.}, \bibinfo{author}{Nishida, E.} \&
+  \bibinfo{author}{Ishikawa, F.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Stemness-related factor sall4
+  interacts with transcription factors oct-3/4 and sox2 and occupies oct-sox
+  elements in mouse embryonic stem cells}}.
+\newblock {\emph{\JournalTitle{Journal of Biological Chemistry}}}
+  \textbf{\bibinfo{volume}{288}}, \bibinfo{pages}{5027–5038},
+  \doiprefix\url{10.1074/jbc.m112.411173} (\bibinfo{year}{2013}).
 
 \end{thebibliography}
