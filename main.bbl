@@ -434,6 +434,80 @@
   \textbf{\bibinfo{volume}{11}}, \doiprefix\url{10.1038/s41598-021-01366-4}
   (\bibinfo{year}{2021}).
 
+\bibitem{ets2_1}
+\bibinfo{author}{Janesick, A.}, \bibinfo{author}{Wu, S.~C.} \&
+  \bibinfo{author}{Blumberg, B.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Retinoic acid signaling and
+  neuronal differentiation}}.
+\newblock {\emph{\JournalTitle{Cellular and Molecular Life Sciences}}}
+  \textbf{\bibinfo{volume}{72}}, \bibinfo{pages}{1559–1576},
+  \doiprefix\url{10.1007/s00018-014-1815-9} (\bibinfo{year}{2015}).
+
+\bibitem{ets2_2}
+\bibinfo{author}{Janesick, A.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Erf and etv3l are retinoic
+  acid-inducible repressors required for primary neurogenesis}}.
+\newblock {\emph{\JournalTitle{Development}}} \textbf{\bibinfo{volume}{140}},
+  \bibinfo{pages}{3095–3106}, \doiprefix\url{10.1242/dev.093716}
+  (\bibinfo{year}{2013}).
+
+\bibitem{isl1_1}
+\bibinfo{author}{Pfaff, S.~L.}, \bibinfo{author}{Mendelsohn, M.},
+  \bibinfo{author}{Stewart, C.~L.}, \bibinfo{author}{Edlund, T.} \&
+  \bibinfo{author}{Jessell, T.~M.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Requirement for lim homeobox gene
+  isl1 in motor neuron generation reveals a motor neuron--dependent step in
+  interneuron differentiation}}.
+\newblock {\emph{\JournalTitle{Cell}}} \textbf{\bibinfo{volume}{84}},
+  \bibinfo{pages}{309--320} (\bibinfo{year}{1996}).
+
+\bibitem{isl1_2011}
+\bibinfo{author}{Liang, X.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Isl1 is required for multiple
+  aspects of motor neuron development}}.
+\newblock {\emph{\JournalTitle{Molecular and Cellular Neuroscience}}}
+  \textbf{\bibinfo{volume}{47}}, \bibinfo{pages}{215--222}
+  (\bibinfo{year}{2011}).
+
+\bibitem{isl1_repro}
+\bibinfo{author}{Zhou, M.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Reprogramming astrocytes to motor
+  neurons by activation of endogenous ngn2 and isl1}}.
+\newblock {\emph{\JournalTitle{Stem Cell Reports}}}
+  \textbf{\bibinfo{volume}{16}}, \bibinfo{pages}{1777--1791}
+  (\bibinfo{year}{2021}).
+
+\bibitem{nr3c1}
+\bibinfo{author}{Shin, J.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Single-cell rna-seq with waterfall
+  reveals molecular cascades underlying adult neurogenesis}}.
+\newblock {\emph{\JournalTitle{Cell stem cell}}} \textbf{\bibinfo{volume}{17}},
+  \bibinfo{pages}{360--372} (\bibinfo{year}{2015}).
+
+\bibitem{rbpj_1}
+\bibinfo{author}{Imayoshi, I.} \& \bibinfo{author}{Kageyama, R.}
+\newblock \bibinfo{journal}{\bibinfo{title}{The role of notch signaling in
+  adult neurogenesis}}.
+\newblock {\emph{\JournalTitle{Molecular neurobiology}}}
+  \textbf{\bibinfo{volume}{44}}, \bibinfo{pages}{7--12} (\bibinfo{year}{2011}).
+
+\bibitem{rbpj_2}
+\bibinfo{author}{Fujimoto, M.} \emph{et~al.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Rbp-j promotes neuronal
+  differentiation and inhibits oligodendroglial development in adult
+  neurogenesis}}.
+\newblock {\emph{\JournalTitle{Developmental biology}}}
+  \textbf{\bibinfo{volume}{332}}, \bibinfo{pages}{339--350}
+  (\bibinfo{year}{2009}).
+
+\bibitem{rbpj_3}
+\bibinfo{author}{Tanigaki, K.} \& \bibinfo{author}{Honjo, T.}
+\newblock \bibinfo{journal}{\bibinfo{title}{Two opposing roles of rbp-j in
+  notch signaling}}.
+\newblock {\emph{\JournalTitle{Current topics in developmental biology}}}
+  \textbf{\bibinfo{volume}{92}}, \bibinfo{pages}{231--252}
+  (\bibinfo{year}{2010}).
+
 \bibitem{sall4_oct4_sox2}
 \bibinfo{author}{Tanimura, N.}, \bibinfo{author}{Saito, M.},
   \bibinfo{author}{Ebisuya, M.}, \bibinfo{author}{Nishida, E.} \&

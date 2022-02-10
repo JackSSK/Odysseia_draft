@@ -75,8 +75,8 @@ Further details and testing results are discussed in the remainder of this paper
     secondly, we perform extensive analysis using diverse collection of sequencing data to demonstrate that \emph{Odysseia} can be applied into real world problems, especially in finding potential GFs to perform cell reprogramming.
 \item {\hyperref[disc]{\textbf{Discussion:}}}
     third, we discuss about how the outputs of this system can be utilized in further wet lab experiments and what further improvements can be done on this system.
-\item {\hyperref[conc]{\textbf{Conclusion:}}}
-    finally, we conclude this paper.
+% \item {\hyperref[conc]{\textbf{Conclusion:}}}
+%     finally, we conclude this paper.
 \end{itemize}
 
 \section*{Methods}
@@ -367,15 +367,12 @@ Myod1 & 0 & 3 & Can reprogram MEF into myoblast and myotube solely\cite{mef_iMPC
 \end{tabular}
 \end{table}
 
-\item \textbf{iPSC and Dopaminergic Neuron}:
-The main purpose of analyzing this dataset is to assess \emph{Odysseia}'s peformance while stimulating natural cells with artificially induced cells.
-This dataset is retrieved from research project studying detailed processes of fibroblast to myocyte and myogenic progenitor cell(MPC) conversion.\cite{ips_neuron_ascl1}
-Since authors did not provide scRNA-seq data for natural MPCs but only induced MPCs(iMPCs) generated with MyoD dependent treatments, we stimulate natrual MPCs with iMPCs expressing Myod1.
-Specifically, only iMPC scGEPs having EL of Myod1 greater than 1, the lowest EL in dataset, were analyzed with MEF scGEPs.
-Due to the limitation on our device, pseudo-cGEPs were generated with every 100 scGEPs.
-As a result, in total of 99 MyoD+ iMPC and 62 MEFs pseudo-cGEPs were generated.
-Stdev threshold was also set to 5 to limit the size of GRN reconstruct guidance being 3756 GRPs.
-While all other parameters remained at default, \emph{Odysseia} extracted 6 key genes and 3 common regulatory sources of key genes.
+\item \textbf{Radial glia and Neuron}:
+Furthermore, contemplating feasible difficulty in obtaining purified scRNA-seq dataset of cell subtypes, we tested \emph{Odysseia} when analyzing differences between purified and mixed CS data.
+The input dataset of this analysis consists scGEPs of purified neuron and radial glial cell, progenitor cell of neuron, mixed with neuron.
+All the data are retrieved from published dataset used to examine CS conversion from iPSC to neuron.\cite{ips_neuron_ascl1}
+Similar with MEF and iMPC analysis, pseudo-cGEPs were also generated with every 100 scGEPs which result in total of 90 neural co-culture and 72 purified neuron pseudo-cGEPs.
+Without changes on other default parameters, 40441 GRPs were included in GRN reconstruct guidance, and \emph{Odysseia} extracted 17 key genes and 19 common regulatory sources of key genes.
 Partial analysis result is listed below under same format as mentioned in section above, and complete output gene list is included as \textbf{Supplementary Table 3}.
 
 \begin{table}[ht]
@@ -384,17 +381,17 @@ Partial analysis result is listed below under same format as mentioned in sectio
 \hline
 \textbf{Gene} & \textbf{Occurrence} & \textbf{Degree} & \textbf{Previous report}  \\
 \hline
-Ets2 & 48 & 12 & ummm\cite{} \\
+Ets2 & 48 & 12 & Cell cycle regulator need to be repressed for primary neurogenesis\cite{ets2_1, ets2_2} \\
 \hline
-Isl1 & 23 & 4 & ummm\cite{}\\
+Isl1 & 23 & 4 & Key gene for motor neuron development\cite{isl1_1, isl1_2011, isl1_repro}\\
 \hline
-Ascl1 & 16 & 13 & umm\cite{ips_neuron_ascl1} \\
+Ascl1 & 16 & 13 & A lot~\cite{ips_neuron_ascl1} \\
 \hline
-Nr3c1 & 0 & 9 & ummm\cite{}\\
+Nr3c1 & 0 & 9 & Cell cycle inhibitor during embryonic neurogenesis\cite{nr3c1}\\
 \hline
-Rbpj & 0 & 8 & ummm\cite{}\\
+Rbpj & 0 & 8 & Key mediator of Notch signaling in neurogenesis\cite{rbpj_1, rbpj_2, rbpj_3}\\
 \hline
-Neurod1 & 0 & 7 & ummm\cite{ips_neuron_ascl1} \\
+Neurod1 & 0 & 7 & A lot~\cite{ips_neuron_ascl1} \\
 \hline
 \end{tabular}
 \end{table}
@@ -415,9 +412,9 @@ Considering the variability of available types of data in different studies, $Od
 
 % And how to carry out further analysis with the output stuffs?
 
-\section*{Conclusion}
-\label{conc}
-Conclusion goes here
+% \section*{Conclusion}
+% \label{conc}
+% Conclusion goes here
 
 \bibliography{reference}
 
@@ -429,23 +426,18 @@ Conclusion goes here
 % J.W.: Project administration
 
 \section*{Additional information}
-Result, Discussion, Conclusion are not done yet
+All scRNA-seq datasets are retrieved from Gene Expression Omnibus(GEO) as described in Key Resource Table below.
 
 
 \subsection*{Key Resource Table}
 
-% \begin{tabular}{|l|l|l|}
-%   \hline
-%   \textbf{Resource}     & \textbf{Source}     & \textbf{Identifier}\\
-%   \hline
-%   \textbf{MEF and ESC scRNA-seq data}   & Gene Expression Omnibus Accession: GSE103221 & \url{https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE103221&format=file&file=GSE103221%5Fnormalized%5Fcounts%2Ecsv%2Egz}\\
-%   \hline
-%   \textbf{MEF and Myoblast scRNA-seq data}   & Gene Expression Omnibus Accession: GSE169054 & \url{}\\
-%   \hline
-%   \textbf{iPSC and Neuron scRNA-seq data}   & Gene Expression Omnibus Accession: GSE185275 & \url{}\\
-%   \hline
-% \end{tabular}
-
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Resource}                      & \textbf{Source}                              & \textbf{Usage}                                                                                                                  \\ \hline
+MEF and ESC scRNA-seq data             & GEO Accession: GSE103221 & \begin{tabular}[c]{@{}l@{}}Samples with label start with 'mef' as MEF\\ Samples with label start with 'esc' as ESC\end{tabular} \\ \hline
+MEF and iMPC scRNA-seq data            & GEO Accession: GSE169054 & \begin{tabular}[c]{@{}l@{}}GSM5175907 as iMPC\\ GSM5643793 as MEF\end{tabular}                                                  \\ \hline
+Radial glia and Neuron scRNA-seq data & GEO Accession: GSE185275 & \begin{tabular}[c]{@{}l@{}}GSM5609927 as neural co-culture\\ GSM5609930 as purified neurons\end{tabular}                        \\ \hline
+\end{tabular}
 
 
 % $CASH$        & Combined Algorithm Selection and Hyperparameter optimization\\
