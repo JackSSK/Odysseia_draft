@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.29)  11 FEB 2022 04:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.29)  13 FEB 2022 00:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -776,25 +776,25 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 7
 (d:/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-<image/Odysseia.png, id=48, 2124.93875pt x 1200.485pt>
+<image/Odysseia.png, id=50, 2124.93875pt x 1200.485pt>
 File: image/Odysseia.png Graphic file (type png)
 <use image/Odysseia.png>
 Package pdftex.def Info: image/Odysseia.png  used on input line 95.
 (pdftex.def)             Requested size: 400.38872pt x 226.18945pt.
- [2 <./image/Odysseia.png>]
-<image/Kirke.png, id=70, 1315.91624pt x 1763.58875pt>
+ [2]
+<image/Kirke.png, id=79, 1315.91624pt x 1763.58875pt>
 File: image/Kirke.png Graphic file (type png)
 <use image/Kirke.png>
 Package pdftex.def Info: image/Kirke.png  used on input line 156.
 (pdftex.def)             Requested size: 254.76538pt x 341.43614pt.
- [3]
-<image/nn.png, id=95, 2271.48625pt x 1011.78pt>
+ [3 <./image/Odysseia.png>]
+<image/nn.png, id=99, 2271.48625pt x 1011.78pt>
 File: image/nn.png Graphic file (type png)
 <use image/nn.png>
 Package pdftex.def Info: image/nn.png  used on input line 191.
 (pdftex.def)             Requested size: 400.38872pt x 178.33011pt.
  [4 <./image/Kirke.png>]
-<image/Odysseus.png, id=108, 2559.5625pt x 1044.90375pt>
+<image/Odysseus.png, id=112, 2559.5625pt x 1044.90375pt>
 File: image/Odysseus.png Graphic file (type png)
 <use image/Odysseus.png>
 Package pdftex.def Info: image/Odysseus.png  used on input line 209.
@@ -802,18 +802,18 @@ Package pdftex.def Info: image/Odysseus.png  used on input line 209.
  [5 <./image/nn.png>] [6 <./image/Odysseus.png>] [7] (./main.bbl [8] [9] [10]) 
 
 AED: lastpage setting LastPage
-[11] (./main.aux)
+[11] [12] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D3FED2E5F0E52696EA13293C1C8D8398;99.
  ) 
 Here is how much of TeX's memory you used:
- 25678 strings out of 478287
- 482007 string characters out of 5850749
- 826711 words of memory out of 5000000
- 42986 multiletter control sequences out of 15000+600000
- 568865 words of font info for 425 fonts, out of 8000000 for 9000
+ 25747 strings out of 478287
+ 483416 string characters out of 5850749
+ 827079 words of memory out of 5000000
+ 43035 multiletter control sequences out of 15000+600000
+ 569540 words of font info for 431 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,13n,91p,1203b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 83i,13n,91p,1203b,542s stack positions out of 5000i,500n,10000p,200000b,80000s
 {d:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<d:/texlive/2021/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/texlive/2021/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmmi10.pfb><d:/texlive/2021/texmf-dist/fonts/type1
@@ -826,10 +826,10 @@ w/symbol/usyr.pfb><d:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
 <d:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><d:/texlive/2021/
 texmf-dist/fonts/type1/urw/times/utmr8a.pfb><d:/texlive/2021/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on main.pdf (11 pages, 761563 bytes).
+Output written on main.pdf (12 pages, 764078 bytes).
 PDF statistics:
- 383 PDF objects out of 1000 (max. 8388607)
- 332 compressed objects within 4 object streams
- 83 named destinations out of 1000 (max. 500000)
+ 414 PDF objects out of 1000 (max. 8388607)
+ 362 compressed objects within 4 object streams
+ 94 named destinations out of 1000 (max. 500000)
  105501 words of extra memory for PDF output out of 106986 (max. 10000000)
 

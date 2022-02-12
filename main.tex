@@ -13,16 +13,16 @@
 \affil[1]{Affiliation, department, city, postcode, country}
 % \affil[2]{Affiliation, department, city, postcode, country}
 \affil[*1]{Correspondence: gyu17@alumni.jh.edu}
-% \affil[*2]{Correspondence: gyu17@alumni.jh.edu}
+% \affil[*2]{Correspondence: wang_jie01@gibh.ac.cn}
 % \affil[+]{these authors contributed equally to this work}
-\keywords{Cell Reprogramming,Machine Learning,Gene Regulatory Network}
+\keywords{Cell Reprogramming, Machine Learning, Gene Regulatory Network}
 
 \begin{abstract}
 With rapid progress of robust single-cell transcriptome sequnecing since last decade, numerous complicate mechanism underlying cell development has been revealed.
 Yet, single-cell RNA sequencing (scRNA-seq) analysis is widely accepted as main approach to define cell stages and phenotypes.
 As conversion of somatic cells into induced pluripotency cells already succeeded, identification key genetic factors(GFs) with scRNA-seq for cell reprogramming in biological research and regenerative medicine fields has gained great attention.
 Herein, we describe \emph{Odysseia}, an interpretable machine learning classifier based single-cell gene expression profile(scGEP) analysis system, that assesses importances of genetic regulatory features in differentiating cell state(CS).
-Furthermore, combined with regulatory network analysis, extracted factors can help to find specific key GFs in implementing CS conversions.
+Furthermore, combined with regulatory network analysis, extracted factors can help to find key GFs in not only classifying CSs but also possibly implementing CS conversions.
 Analyzing 3 published cell reprogramming related reports studying diverge cell types, \emph{Odysseia} correctly extracts genes acclaimed being capable to induce CS conversion.
 Overall, \emph{Odysseia} provides an option to obtain guidance information while elucidating mechanism to engineer cellular phenotypes.
 \end{abstract}
@@ -57,10 +57,10 @@ Then, we can analysis the well-performing classifiers and determine which featur
 
 However, in this approach, if a few feature associating with similar functions can be informative enough, CS classifiers could reach remarkably high accuracy with limited features being heavily weighted.
 As a result, partial of potential key features will presumably be lost even classifiers being analyzed has demonstrated accuracy over testing data, and informativity of system output will be questionable.
-\textbf{
-For example, cell growth related genes can also be used as marker genes when separating cells not only in different types but also on distinct cell cycle stages.
-But, if only cell growth related genes are found after classifier analysis, system output's capability in guiding CS conversion is unlikely being sufficient.
-}
+
+For example, cell differentiation or cell type transformation is accompanied by a series of GEP and epigenetic changes, and these processes usually occur during the cell cycle.\cite{dalton_2015, engstrom_2021}
+As a result, GFs related to cell cycle or proliferation can be used as differential characteristics to classify CSs but are not key regulators of the differentiation process.
+If only these GFs are found after classifier analysis, system output's capability in guiding CS conversion is unlikely being sufficient.
 Therefore, a particular classification model designed solving transformed question can still encounter feature lost issue.
 
 In order to overcome feature lost issue as well, \emph{Odysseia} applies multiple classification models with distinct architecture settings in each training iteration then selects well-performing classifiers for further assessment and interpretation.
@@ -362,14 +362,14 @@ Tcf4 & 2 & 2 & Marker of MEF in muscle connective tissue; Myogenesis mediator\ci
 \hline
 Mef2a & 0 & 3 & Synergy factor of MyoD in the conversion of MEF into myoblast\cite{mef2_2017, mef2_skeletal}\\
 \hline
-Myod1 & 0 & 3 & Can reprogram MEF into myoblast and myotube solely\cite{mef_iMPC_ETH, myod_1990} \\
+Myod1 & 0 & 3 & Can reprogram MEF into myoblast and myotube solely\cite{mef_iMPC_ETH, myod_1990, myod_crispr} \\
 \hline
 \end{tabular}
 \end{table}
 
 \item \textbf{Radial glia and Neuron}:
 Furthermore, contemplating feasible difficulty in obtaining purified scRNA-seq dataset of cell subtypes, we tested \emph{Odysseia} when analyzing differences between purified and mixed CS data.
-The input dataset of this analysis consists scGEPs of purified neuron and radial glial cell, progenitor cell of neuron, mixed with neuron.
+The input dataset of this analysis consists scGEPs of purified neuron and iPSC-derived radial glial cell, progenitor cell of neuron, mixed with neuron.
 All the data are retrieved from published dataset used to examine CS conversion from iPSC to neuron.\cite{ips_neuron_ascl1}
 Similar with MEF and iMPC analysis, pseudo-cGEPs were also generated with every 100 scGEPs which result in total of 90 neural co-culture and 72 purified neuron pseudo-cGEPs.
 Without changes on other default parameters, 40441 GRPs were included in GRN reconstruct guidance, and \emph{Odysseia} extracted 17 key genes and 19 common regulatory sources of key genes.
@@ -385,13 +385,13 @@ Ets2 & 48 & 12 & Cell cycle regulator need to be repressed for primary neurogene
 \hline
 Isl1 & 23 & 4 & Key gene for motor neuron development\cite{isl1_1, isl1_2011, isl1_repro}\\
 \hline
-Ascl1 & 16 & 13 & A lot~\cite{ips_neuron_ascl1} \\
+Ascl1 & 16 & 13 & Key neurogenesis regulator\cite{ips_neuron_ascl1, ascl1_1}; Can induce neuronal reprogramming solely\cite{ascl1_1frepro ,ascl1_repro} \\
 \hline
 Nr3c1 & 0 & 9 & Cell cycle inhibitor during embryonic neurogenesis\cite{nr3c1}\\
 \hline
 Rbpj & 0 & 8 & Key mediator of Notch signaling in neurogenesis\cite{rbpj_1, rbpj_2, rbpj_3}\\
 \hline
-Neurod1 & 0 & 7 & A lot~\cite{ips_neuron_ascl1} \\
+Neurod1 & 0 & 7 & Key neurogenesis regulator\cite{ips_neuron_ascl1, neurod1_1, neurod1_2, neurod1_3, neurod1_4} \\
 \hline
 \end{tabular}
 \end{table}
@@ -402,15 +402,23 @@ Even though \emph{Odysseia} is unable to guarantee a gene combination inducing C
 For example, when analyzing MEF with iPSC, the top 3 genes having most occurrences among important GRPs are determined as key factors to reprogram MEF into iPSC with 7F combination\cite{ips7f}.
 With Jdp2 which is selected to block AP-1 activity also as Fos indicating, the combination of Jdp2, Nanog, Esrrb, and Sall4 is demonstrated as a minimum 4F functional set to perform cell reprogramming\cite{ips7f}.
 While Sall4 indicating interaction between Sox2 and Oct4\cite{sall4_oct4_sox2}, main components among Yamanaka factors\cite{yamanaka_2006, osk} can also be extracted with \emph{Odysseia}'s analysis result.
+Between MEF and muscle cell, multiple works demonstrated capability of Myod1, which is successfully extracted by \emph{Odysseia}, in artificially induce CS conversion.\cite{myod_1990, myod_crispr}
+For neurogenesis analysis, Ascl1, included as key factor in several neuronal conversion methods\cite{ascl1_repro,  ascl1_1frepro}, is marked as key gene having the most consequential regulatory influence by \emph{Odysseia}.
+It is noteworthy that other factors extracted with \emph{Odysseia} may also play important role in CS conversions but not yet testified with adequate experiments.
 
 
 \section*{Discussion}
 \label{disc}
-Considering the variability of available types of data in different studies, $Odysseia's$ modules not only can be adjusted upon available resources but also, in order to improve biological interpretability on outputs, provide processed generalized background datasets, such as $GTRD$\cite{gkaa1057} for finding potential target genes of selected transcription factors when building $GRN$ reconstruction guidance. Admittedly, generalized background datasets can still fail to provide substantial support in boundary cases like studying specie is not covered in the dataset. To achieve optimized biological interpretability, substituting generalized dataset with case specific data would be essential.
+As scRNA-seq technology becomes increasingly accessible and applicable, an efficient and robust analytical system capable to extract key GFs differentiating CSs will also become highly demanded.
+In this paper, we have shown \emph{Odysseia}'s applicability in analyzing scRNA-seq derived data for further CS related research.
+According to test cases so far, key genes being significant enough to induce CS conversions appear to have either high occurrence in top ranked GRPs or high regulatory influence on other key genes.
+Without any previous knowledge on studying CSs, Gene Ontology (GO) enrichment analysis can potentially narrow down key cellular functions being changed in different CSs.
 
-% Maybe I should also talk about how modifications shall be made as well?
+However, further tests and optimizations are necessary to confirm \emph{Odysseia}'s applicability on guiding frontier researches.
+While more resources become available, other classification models and interpretation methods will be added and tested with current version on larger scales.
+Further optimized model selection process will also be critical to improve system's overall performance.
 
-% And how to carry out further analysis with the output stuffs?
+With result achieved so far, we anticipate that \emph{Odysseia} will become useful in providing insightful advices on not only learning differences between CSs and cell subtypes but also finding key GFs to induce CS conversion unachievable by now.
 
 % \section*{Conclusion}
 % \label{conc}
@@ -434,7 +442,7 @@ All scRNA-seq datasets are retrieved from Gene Expression Omnibus(GEO) as descri
 \begin{tabular}{|l|l|l|}
 \hline
 \textbf{Resource}                      & \textbf{Source}                              & \textbf{Usage}                                                                                                                  \\ \hline
-MEF and ESC scRNA-seq data             & GEO Accession: GSE103221 & \begin{tabular}[c]{@{}l@{}}Samples with label start with 'mef' as MEF\\ Samples with label start with 'esc' as ESC\end{tabular} \\ \hline
+MEF and ESC scRNA-seq data             & GEO Accession: GSE103221 & \begin{tabular}[c]{@{}l@{}}Samples with label started with 'mef' as MEF\\ Samples with label started with 'esc' as ESC\end{tabular} \\ \hline
 MEF and iMPC scRNA-seq data            & GEO Accession: GSE169054 & \begin{tabular}[c]{@{}l@{}}GSM5175907 as iMPC\\ GSM5643793 as MEF\end{tabular}                                                  \\ \hline
 Radial glia and Neuron scRNA-seq data & GEO Accession: GSE185275 & \begin{tabular}[c]{@{}l@{}}GSM5609927 as neural co-culture\\ GSM5609930 as purified neurons\end{tabular}                        \\ \hline
 \end{tabular}
