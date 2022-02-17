@@ -4,7 +4,7 @@
 \usepackage{listings}
 \title{Odysseia: Genetic Regulatory Feature Analysis with Interpretable Classification Machine Learning Models}
 
-\author[1,*1]{Jack Yu}
+\author[1,*1]{Gang Yu}
 % \author[1,2,*1]{Jack Yu}
 \author[1,]{Jiawang Tao}
 \author[1,*2]{Jie Wang}
@@ -273,15 +273,15 @@ Here $i$ denotes i\emph{th} feature or GRP, $C$ denotes the total number of clas
 \subsection*{Step 4: Key genes extraction}
 \label{step4}
 With feature list ranked according to importance values, \emph{Odysseia} reconstructs regulon for top-ranked GRPs and extracts influential genes among the regulon.
-If analoging regulon or GRN with the graph concept in discrete mathematics, one of the most common methods to analyze influence of a vertex, which is equivalent to a gene, is assessing correspond degree of the vertex.
-Although the regulatory source and target within a GRP can be determined by utilizing interaction database, such as \emph{GTRD}\cite{gkaa1057} which shows regulatory relationship of interactors, numerous computational prediction methods, for example,  \emph{GRNBoost2}\cite{grnboost2}, and comprehensive interaction database, for example, \emph{BioGRID}\cite{biogrid}, could not provide faithful indication on regulatory directions.
-Consequently, based on choice of interaction database for \emph{Odysseia}, the regulon reconstructed cannot be guaranteed to be a directed graph, but can surely be analyzed as an undirected graph.
-Therefore, in this step, \emph{odysseia} primarily extracts genes with high degrees in the regulon, regardless of they are in-degree or out-degree.
-To limit total amount of output key genes, the default setting of \emph{Odysseia} reconstructs regulon for top 100 GRPs, and genes with degree higher than two in the regulon will be considered influential.
-If regulatory relationships can be clarifed, the regulatory sources capable of regulating multiple key genes and the regulatory targets influenced by multiple key genes can also be extracted according to GRN reconstruction guidance.
+If analoging regulon with the graph concept in discrete mathematics, one of the most common methods to analyze influence of a vertex, which is equivalent to a gene, is assessing correspond degree of the vertex.
+Although the regulatory source and target of GRP can be determined by utilizing interaction database, such as \emph{GTRD}\cite{gkaa1057} which shows regulatory relationship of interactors, numerous computational prediction methods like \emph{GRNBoost2}\cite{grnboost2} and comprehensive interaction database, \emph{BioGRID}\cite{biogrid} for example, could not provide faithful indication on regulatory directions.
+Consequently, based on choice of interaction database, the regulon reconstructed with \emph{Odysseia} cannot be guaranteed to be a directed graph but an undirected graph.
+Therefore, in this step, \emph{odysseia} primarily extracts genes with high regulatory degrees in the regulon, regardless of they act as source or target in GRPs.
+To limit total amount of output key genes, the default setting of \emph{Odysseia} reconstructs regulon for top 100 GRPs, and genes with regulatory degree higher than two in the regulon will be considered influential.
+If regulatory directions can be clarifed, the regulatory sources capable of regulating multiple key genes and the regulatory targets influenced by multiple key genes can also be extracted according to GRN reconstruction guidance.
 
-In the circumstance of finding genes potentially inducing CS conversion, referred as \emph{Mogrify}\cite{mogrify_2016}, genes either CS deterministic or capable of regulating key genes shall gain attention.
-If a gene is not marked as important, it must be capable of regulating more than 2 listed key genes to be considered as an important regulatory interactor.
+In the circumstance of finding genes potentially inducing CS conversion, referred as \emph{Mogrify}\cite{mogrify_2016}, both CS deterministic genes and common regulators of these genes shall gain attention.
+Herein, \emph{Odysseia} analogizes key genes extracted from top GRPs as CS deterministic genes and TFs capable of regulating more than 2 listed key genes as significant common regulator.
 
 % Both non-convergence issue and feature lost issue reflect on one of the key problems for $AutoML$: "No single machine learning method performs best on all datasets".\cite{NIPS2015_11d0e628}
 % Even though this problem can be solved while viewing $AutoML$ as a $CASH$ problem \cite{thornton2013auto}, such approach may not be directly deployable in our scenario considering comprehensive CS deterministic GFs or GRPs could be hardly labeled out.
@@ -304,10 +304,10 @@ In order to evaluate analytic power, we tested \emph{Odysseia} with three previo
 Considering the differences in information availability and data size among datasets, each dataset is analyzed with adjusted process.
 \subsection*{MEF and ESC}
 This dataset was used to study cell fate continuum when reprogramming MEF into iPSC, one of the most well-studied CS conversions.\cite{mef_ipsc_cas}
-To simulate the process of finding gene combination for reprogramming somatic cell into pluripotent stem cell, we used scGEPs-labeled MEFs and embryonic stem cells(ESCs) as input of \emph{Odysseia}.
+To simulate the process of finding gene combination for reprogramming somatic cell into pluripotent stem cell, we used scGEPs labeled MEFs and embryonic stem cells(ESCs) as input of \emph{Odysseia}.
 Due to the limited amount of scGEPs, SWA with window size set to 10 and padding stride set to 1 was applied to generate 73 ESC pseudo-cGEPs and 65 MEF pseudo-cGEPs.
 SD threshold is set to 100, which resulted in GRN reconstruct guidance consisting 72440 GRPs, considering the computational load our testing device could accept.
-While all other parameters remained as default, \emph{Odysseia} extracted 16 key genes and 9 common regulatory sources of key genes.
+While all other parameters remained as default, \emph{Odysseia} extracted 16 key genes and 9 common regulators.
 Partial key genes which have already been reported in other studies are listed below, and complete output gene list is included in \textbf{Supplementary Table 1}.
 
 \begin{table}[ht]
@@ -338,12 +338,12 @@ Here, \textbf{Occurrence} refers to occurrences in top ranked GRPs; \textbf{Degr
 \subsection*{MEF and iMPC}
 The main purpose of analyzing this dataset is to assess \emph{Odysseia}'s performance while stimulating natural cells with artificially induced cells.
 This dataset is retrieved from research project studying detailed processes of fibroblast to myocyte and myogenic progenitor cell(MPC) conversion.\cite{mef_iMPC_ETH}
-For approaching muscle cell reprogramming, the output goal of this analysis is designed to find key genes for converting MEF into myoblast and further derived myotube can be stimulated with MyoD+ induced MPCs(iMPCs)\cite{mpc_as_myoblast}.
+For approaching muscle cell reprogramming, the output goal of this analysis is designed to find key genes for converting MEF into myoblast and further derived myotube which can be stimulated with MyoD+ induced MPCs(iMPCs)\cite{mpc_as_myoblast}.
 Practically, only iMPC scGEPs with EL of Myod1 greater than 1, the lowest positive EL in dataset, were extracted as myoblasts and myotubes co-culture and analyzed with MEF scGEPs.
 Due to computational limitation on our device, pseudo-cGEPs were generated with every 100 scGEPs.
 As a result, in total of 99 MyoD+ iMPC and 62 MEFs pseudo-cGEPs were generated.
-SD threshold was also set to 5 to limit the size of GRN reconstruct guidance to be 3756 GRPs.
-Without any change on other default parameters, \emph{Odysseia} extracted 6 key genes and 3 common regulatory sources of key genes.
+SD threshold was also set to 5 to limit the size of GRN reconstruct guidance to be 3756 GRPs while not automatically passing Myod1.
+Without any change on other default parameters, \emph{Odysseia} extracted 6 key genes and 3 common regulators.
 Partial analysis result is listed below under same format as mentioned in section above, and complete output gene list is included in \textbf{Supplementary Table 2}.
 
 \begin{table}[ht]
@@ -368,11 +368,11 @@ Myod1 & 0 & 3 & Can reprogram MEF into myoblast and myotube solely\cite{mef_iMPC
 \end{table}
 
 \subsection*{Radial glia and Neuron}
-Furthermore, contemplating feasible difficulty in obtaining purified scRNA-seq dataset of cell subtypes, we tested \emph{Odysseia} when analyzing differences between purified and mixed CS data.
-The input dataset of this analysis consists of scGEPs of purified neuron and iPSC-derived radial glial cell, the progenitor cell of neuron, mixing with neuron.
+Furthermore, contemplating feasible difficulty in obtaining purified scRNA-seq dataset of cell subtypes and CSs, we tested \emph{Odysseia} when analyzing differences between purified and mixed CS data.
+The input dataset of this analysis consists of scGEPs of purified neurons and iPSC-derived radial glial cells, the progenitor cell of neuron, mixing with neurons.
 All of the data are retrieved from published dataset used to examine CS conversion from iPSC to neuron.\cite{ips_neuron_ascl1}
 Similar with MEF and iMPC analysis, pseudo-cGEPs were also generated with every 100 scGEPs which result in a total of 90 neural co-culture and 72 purified neuron pseudo-cGEPs.
-Without changes on other default parameters, 40441 GRPs were included in GRN reconstruct guidance, and \emph{Odysseia} extracted 17 key genes and 19 common regulatory sources of key genes.
+Without changes on other default parameters, 40441 GRPs were included in GRN reconstruct guidance, and \emph{Odysseia} extracted 17 key genes and 19 common regulators.
 Partial analysis result is listed below under same format as mentioned in section above, and complete output gene list is included in \textbf{Supplementary Table 3}.
 
 \begin{table}[ht]
@@ -398,8 +398,8 @@ Neurod1 & 0 & 7 & Key neurogenesis regulator\cite{ips_neuron_ascl1, neurod1_1, n
 
 Even though \emph{Odysseia} is unable to guarantee a gene combination inducing CS conversion, numerous previously discovered key genes can be successfully extracted, which indicated gene combination known capable to convert CSs.
 For example, when analyzing MEF with iPSC, the top three genes having most occurrences among important GRPs are determined as key factors to reprogram MEF into iPSC with 7F combination\cite{ips7f}.
-With Jdp2, which is selected to block AP-1 activity also as Fos indicated, the combination of Jdp2, Nanog, Esrrb, and Sall4 is demonstrated as a minimum 4F functional set to perform cell reprogramming\cite{ips7f}.
-While Sall4 indicated interaction between Sox2 and Oct4\cite{sall4_oct4_sox2}, main components among Yamanaka factors\cite{yamanaka_2006, osk} can also be extracted with \emph{Odysseia}'s analysis result.
+With Jdp2, which is selected to block AP-1 activity also as Fos, an AP-1 subunit, can indicate, the combination of Jdp2, Nanog, Esrrb, and Sall4 is demonstrated as a minimum 4F functional set to perform cell reprogramming\cite{ips7f}.
+While Sall4 indicating interaction between Sox2 and Oct4\cite{sall4_oct4_sox2}, main components among Yamanaka factors\cite{yamanaka_2006, osk} can also be extracted with \emph{Odysseia}'s analysis result.
 Between MEF and muscle cell, multiple works demonstrated capability of Myod1, which is successfully extracted by \emph{Odysseia}, in artificially induce CS conversion.\cite{myod_1990, myod_crispr}
 For neurogenesis analysis, Ascl1, included as key factor in several neuronal conversion methods\cite{ascl1_repro,  ascl1_1frepro}, is marked as key gene with the most consequential regulatory influence by \emph{Odysseia}.
 It is noteworthy that other factors extracted with \emph{Odysseia} may also play an important role in CS conversions but have not yet been  testified with adequate experiments.
